@@ -11,8 +11,9 @@
     "build": "npm-run-all -s build:copy -p build:css build:js",
     "watch:server": "browser-sync start --server ./dist --files \"./dist/*.*\"",
     "watch:copy": "cpx src/**/*.html dist --watch",
+    "watch:css": "sass --watch src/scss:dist --sourcemap=none",
     "watch:js": "watchify -t babelify ./src/js/app.js -o ./dist/bundle.js",
-    "watch": "npm-run-all -p watch:copy watch:js watch:server",
+    "watch": "npm-run-all -p watch:copy watch:css watch:js watch:server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
