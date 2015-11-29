@@ -5,7 +5,10 @@
   "main": "./src/app.js",
   "scripts": {
     "start": "npm run watch",
-    "build": "browserify -t babelify ./src/js/app.js -o ./dist/bundle.js",
+    "build:copy": "cpx ./src/**/*.html ./dist",
+    "build:css": "sass ./src/scss/common.scss ./dist/common.css --sourcemap=none",
+    "build:js": "browserify -t babelify ./src/js/app.js -o ./dist/bundle.js",
+    "build": "npm-run-all -s build:copy -p build:css build:js",
     "watch:server": "browser-sync start --server ./dist --files \"./dist/*.*\"",
     "watch:copy": "cpx ./src/**/*.html ./dist --watch",
     "watch:js": "watchify -t babelify ./src/js/app.js -o ./dist/bundle.js",
