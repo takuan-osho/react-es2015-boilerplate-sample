@@ -4,6 +4,7 @@
   "description": "",
   "main": "src/app.js",
   "scripts": {
+    "start": "npm run watch",
     "build": "browserify -t babelify src/js/app.js -o dist/bundle.js",
     "watch:server": "browser-sync start --server . --files 'dist/*.*,*.html'",
     "watch:js": "watchify -t babelify src/js/app.js -o dist/bundle.js",
