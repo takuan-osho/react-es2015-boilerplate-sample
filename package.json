@@ -4,9 +4,9 @@
   "description": "",
   "main": "src/app.js",
   "scripts": {
-    "build": "browserify -t babelify src/app.js -o dist/bundle.js",
+    "build": "browserify -t babelify src/js/app.js -o dist/bundle.js",
     "watch:server": "browser-sync start --server . --files 'dist/*.*,*.html'",
-    "watch:js": "watchify -t babelify src/app.js -o dist/bundle.js",
+    "watch:js": "watchify -t babelify src/js/app.js -o dist/bundle.js",
     "watch": "npm-run-all -p watch:js watch:server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
