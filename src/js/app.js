@@ -1,15 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-
-class App extends React.Component {
-  render() {
-    return (
-      <div>Sample App</div>
-    );
-  }
-}
+import HelloWorld from './hello-world';
 
 ReactDOM.render(
-  <App />,
+  <HelloWorld phrase="ES6" />,
   document.getElementById('app')
 );
