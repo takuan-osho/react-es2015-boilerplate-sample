@@ -52,3 +52,15 @@ export default class CartItem extends React.Component {
     );
   }
 }
+
+CartItem.propTypes = {
+  title: React.PropTypes.string.isRequired,
+  price: React.PropTypes.number.isRequired,
+  initialQty: React.PropTypes.number
+};
+
+CartItem.defaultProps = {
+  title: 'Undefined Product',
+  price: 100,
+  initialQty: 0
+};
